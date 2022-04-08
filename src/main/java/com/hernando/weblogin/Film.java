@@ -15,7 +15,6 @@ public class Film {
 	}
 
 	public Film(String categoryName, int filmsInStock, double price, Date startDate) {
-		super();
 		this.price = price;
 		this.startDate = startDate;
 		this.categoryName = categoryName;
@@ -39,7 +38,7 @@ public class Film {
 	}
 
 	public String getCategoryName() {
-		if (this.categoryName == null) {
+		if (StringUtils.isEmpty(categoryName)) {
 			return "Not category found";
 		}
 		return this.categoryName;
