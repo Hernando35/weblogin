@@ -33,6 +33,12 @@ public class AppController {
         return "signup_form";
     }
     
+    @GetMapping("/films")
+    public String showFilmAvailable(Model model) {
+        model.addAttribute("film", new Film());       
+        return "films";
+    }
+    
     @PostMapping("/process_register")
     public String processRegister(Customer customer) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
