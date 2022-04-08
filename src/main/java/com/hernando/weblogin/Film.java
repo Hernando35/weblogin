@@ -2,11 +2,25 @@ package com.hernando.weblogin;
 
 import java.util.Date;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class Film {
+
+	private String categoryName;
+	private int filmsInStock;
 	private double price;
 	private Date startDate;
-	private String filmName;
-	private int filmsInStock;
+
+	public Film() {
+	}
+
+	public Film(String categoryName, int filmsInStock, double price, Date startDate) {
+		super();
+		this.price = price;
+		this.startDate = startDate;
+		this.categoryName = categoryName;
+		this.filmsInStock = filmsInStock;
+	}
 
 	public double getPrice() {
 		return price;
@@ -24,16 +38,23 @@ public class Film {
 		this.startDate = startDate;
 	}
 
-	public String getFilmName() {
-		return filmName;
+	public String getCategoryName() {
+		if (this.categoryName == null) {
+			return "Not category found";
+		}
+		return this.categoryName;
 	}
 
-	public void setFilmName(String filmName) {
-		this.filmName = filmName;
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
 	}
 
 	public int getFilmsInStock() {
-		return filmsInStock;
+		if (this.filmsInStock <= 0) {
+			return 0;
+		} else {
+			return this.filmsInStock;
+		}
 	}
 
 	public void setFilmsInStock(int filmsInStock) {
@@ -42,9 +63,8 @@ public class Film {
 
 	@Override
 	public String toString() {
-		return "Film [price=" + price + ", startDate=" + startDate + ", filmName=" + filmName
-				+ ", filmsInStock=" + filmsInStock + "]";
+		return "Film [ categoryName= " + categoryName + ", filmsInStock=" + filmsInStock + ", price=" + price
+				+ ", startDate=" + startDate + "]";
 	}
-    
-	
+
 }
