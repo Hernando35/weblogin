@@ -15,10 +15,10 @@ public class Film {
 	}
 
 	public Film(String categoryName, int filmsInStock, double price, Date startDate) {
-		this.price = price;
-		this.startDate = startDate;
 		this.categoryName = categoryName;
 		this.filmsInStock = filmsInStock;
+		this.price = price;
+		this.startDate = startDate;
 	}
 
 	public double getPrice() {
