@@ -1,6 +1,6 @@
 package com.hernando.weblogin;
 
-public class CustomerUtility {
+public class FilmUtility {
   
 	protected boolean isAvailableCategory(Film film) {
 		if (film != null) {

@@ -2,11 +2,22 @@ package com.hernando.weblogin;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import org.apache.commons.lang3.StringUtils;
 
+@Entity
+@Table(name = "films")
 public class Film {
 
-	private String categoryName;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String name;
 	private int filmsInStock;
 	private double price;
 	private Date startDate;
@@ -14,8 +25,8 @@ public class Film {
 	public Film() {
 	}
 
-	public Film(String categoryName, int filmsInStock, double price, Date startDate) {
-		this.categoryName = categoryName;
+	public Film(String name, int filmsInStock, double price, Date startDate) {
+		this.name = name;
 		this.filmsInStock = filmsInStock;
 		this.price = price;
 		this.startDate = startDate;
@@ -38,14 +49,14 @@ public class Film {
 	}
 
 	public String getCategoryName() {
-		if (StringUtils.isEmpty(categoryName)) {
+		if (StringUtils.isEmpty(name)) {
 			return "Not category found";
 		}
-		return this.categoryName;
+		return this.name;
 	}
 
-	public void setCategoryName(String categoryName) {
-		this.categoryName = categoryName;
+	public void setCategoryName(String name) {
+		this.name = name;
 	}
 
 	public int getFilmsInStock() {
@@ -62,8 +73,16 @@ public class Film {
 
 	@Override
 	public String toString() {
-		return "Film [ categoryName= " + categoryName + ", filmsInStock=" + filmsInStock + ", price=" + price
+		return "Film [ name= " + name + ", filmsInStock=" + filmsInStock + ", price=" + price
 				+ ", startDate=" + startDate + "]";
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 }

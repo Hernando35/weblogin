@@ -8,6 +8,7 @@ class WebloginApplicationTests {
 
 	@Test
 	void contextLoads() {
+		System.out.println("hello there!");
 	}
 
 }

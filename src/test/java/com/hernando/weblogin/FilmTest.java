@@ -14,8 +14,8 @@ class FilmTest {
 		film2.setFilmsInStock(4);
 		film2.setPrice(89.0);
 		film2.setStartDate(null);
-		assertEquals("Film [ categoryName= , filmsInStock=32, price=56.0, startDate=null]", film.toString());
-	    assertEquals("Film [ categoryName= Dutch film, filmsInStock=4, price=89.0, startDate=null]", film2.toString());
+		assertEquals("Film [ name= , filmsInStock=32, price=56.0, startDate=null]", film.toString());
+	    assertEquals("Film [ name= Dutch film, filmsInStock=4, price=89.0, startDate=null]", film2.toString());
 	}
 
 }
