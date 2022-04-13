@@ -1,5 +1,6 @@
 package com.hernando.weblogin;
 
-public class Category {
-     
+public abstract class Category {
+	protected abstract boolean isAvailableCategory(Film film);
+	protected abstract boolean isSuscribedCategory(Film film);
 }
